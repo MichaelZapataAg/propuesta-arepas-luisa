@@ -44,10 +44,10 @@ export const OPTIONS: Option[] = [
         monthly: 'Sin mensualidad',
         bestFor: 'Empresas que quieren ser dueñas de la app',
         includes: [
+          'Sin límite de vendedores',
           'Son dueños de la app y del código',
           '2 a 3 mejoras solicitadas incluidas',
           '1 funcionalidad nueva incluida',
-          'Mejoras y features adicionales a tarifa pactada',
         ],
         ipNote:
           'Después de las incluidas, las nuevas mejoras o features se cotizan aparte. Pueden seguir conmigo o contratar a otro dev.',
@@ -60,10 +60,10 @@ export const OPTIONS: Option[] = [
         recommended: true,
         bestFor: 'Entrada baja, sin preocuparse del mantenimiento',
         includes: [
+          'Sin límite de vendedores',
           '2 actualizaciones incluidas cada mes',
           'Arreglos sin costo extra',
           'Soporte directo por WhatsApp',
-          'Camino abierto para comprar la app después',
         ],
         ipNote:
           'Pagan por usar la app, no por ser dueños del código. Si más adelante quieren ser dueños, pagan solo el delta hasta llegar al precio de la compra.',
@@ -93,10 +93,10 @@ export const OPTIONS: Option[] = [
         monthly: 'Hosting ~ $ 100.000 / mes',
         bestFor: 'Quieren independencia técnica total',
         includes: [
+          'Sin límite de vendedores',
           'Son dueños de la app, el panel y los datos',
           '2 a 3 mejoras solicitadas incluidas',
           '1 funcionalidad nueva incluida',
-          'Mejoras y features adicionales a tarifa pactada',
         ],
         ipNote:
           'Después de las incluidas, las nuevas se cotizan aparte. Hosting es un costo bajo bajo su control. Pueden seguir conmigo o contratar a otro equipo.',
@@ -110,10 +110,10 @@ export const OPTIONS: Option[] = [
         recommended: true,
         bestFor: 'Sin preocuparse de hosting ni mantenimiento',
         includes: [
+          'Sin límite de vendedores',
           '2 actualizaciones incluidas cada mes',
           'Hosting cubierto en el mensual',
           'Soporte garantizado por correo',
-          'Camino abierto para comprar la app después',
         ],
         ipNote:
           'Pagan por usar la plataforma completa. Si después la quieren propia, pagan el delta hasta llegar al precio de la compra.',
