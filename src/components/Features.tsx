@@ -35,11 +35,11 @@ function FeatureRow({ feat, idx }: { feat: (typeof FEATURES)[number]; idx: numbe
     target: rowRef,
     offset: ['start end', 'end start'],
   });
-  const phoneY = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [80, -80]);
+  const phoneY = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [50, -50]);
   const phoneRotate = useTransform(
     scrollYProgress,
     [0, 1],
-    reduce ? [0, 0] : isLeft ? [3, -3] : [-3, 3],
+    reduce ? [0, 0] : isLeft ? [2, -2] : [-2, 2],
   );
 
   const phoneAnim = {
@@ -91,12 +91,13 @@ function FeatureRow({ feat, idx }: { feat: (typeof FEATURES)[number]; idx: numbe
             delay: idx * 0.4,
           }}
         />
-        <motion.div
-          variants={phoneAnim}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          style={{ y: phoneY, rotate: phoneRotate }}
-        >
-          <PhoneMockup src={feat.screen} alt={feat.screenAlt} />
+        <motion.div style={{ y: phoneY, rotate: phoneRotate }}>
+          <motion.div
+            variants={phoneAnim}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <PhoneMockup src={feat.screen} alt={feat.screenAlt} />
+          </motion.div>
         </motion.div>
         {/* Número en esquina */}
         <div className="absolute -left-4 -top-4 grid h-14 w-14 place-items-center rounded-2xl border border-(--color-border-soft) bg-(--color-paper) shadow-md">
