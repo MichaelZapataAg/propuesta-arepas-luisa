@@ -87,7 +87,7 @@ export function Pricing() {
       </AnimatePresence>
 
       {/* Cards de planes */}
-      <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5">
         <AnimatePresence mode="popLayout">
           {option.plans.map((p, i) => (
             <motion.article
@@ -103,8 +103,8 @@ export function Pricing() {
               }}
               className={`group relative flex flex-col rounded-3xl border bg-(--color-paper) p-7 transition-shadow duration-300 ${
                 p.recommended
-                  ? 'border-(--color-flag) shadow-xl shadow-(--color-flag)/15 ring-2 ring-(--color-flag)/20 hover:shadow-2xl hover:shadow-(--color-flag)/25'
-                  : 'border-(--color-border-soft) hover:border-(--color-flag)/40 hover:shadow-xl hover:shadow-(--color-flag)/10'
+                  ? 'border-(--color-flag) shadow-xl shadow-(--color-flag)/15 ring-2 ring-(--color-flag)/20 hover:shadow-2xl hover:shadow-(--color-flag)/25 lg:col-span-3 lg:p-9'
+                  : 'border-(--color-border-soft) hover:border-(--color-flag)/40 hover:shadow-xl hover:shadow-(--color-flag)/10 lg:col-span-2'
               }`}
             >
               {p.recommended && (
