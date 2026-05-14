@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { asset } from '../lib/asset';
 
 const NAV_ITEMS = [
   { id: 'features', label: 'Funcionalidades' },
@@ -22,7 +23,7 @@ export function Nav() {
           className="group flex items-center gap-3 justify-self-start"
         >
           <img
-            src="/brand/nav-logo.png"
+            src={asset('/brand/nav-logo.png')}
             alt="Arepas La Luisa"
             className="h-10 w-10 rounded-full object-cover ring-1 ring-(--color-border-soft) transition-all duration-500 group-hover:rotate-[20deg] group-hover:ring-(--color-flag) group-hover:ring-2"
           />

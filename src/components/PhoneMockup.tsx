@@ -1,4 +1,5 @@
 import { motion, type MotionProps } from 'framer-motion';
+import { asset } from '../lib/asset';
 
 type Props = {
   src: string;
@@ -21,7 +22,7 @@ export function PhoneMockup({
     >
       {withNotch && <div className="phone-notch" />}
       <div className="phone-screen">
-        <img src={src} alt={alt} />
+        <img src={asset(src)} alt={alt} />
       </div>
     </motion.div>
   );
