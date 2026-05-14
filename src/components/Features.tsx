@@ -87,7 +87,7 @@ export function Features() {
 
         {/* Card del slide actual */}
         <div className="relative overflow-hidden rounded-[36px] border border-(--color-border-soft) bg-(--color-paper)/60 px-5 py-10 backdrop-blur md:px-12 md:py-16 lg:px-20">
-          <AnimatePresence mode="wait" custom={direction} initial={false}>
+          <AnimatePresence mode="popLayout" custom={direction} initial={false}>
             <motion.div
               key={feat.id}
               custom={direction}
@@ -96,8 +96,8 @@ export function Features() {
               animate={reduce ? { opacity: 1 } : 'center'}
               exit={reduce ? { opacity: 0 } : 'exit'}
               transition={{
-                x: { type: 'spring', stiffness: 260, damping: 32 },
-                opacity: { duration: 0.25 },
+                x: { type: 'spring', stiffness: 420, damping: 38, mass: 0.8 },
+                opacity: { duration: 0.15 },
               }}
               drag={reduce ? false : 'x'}
               dragConstraints={{ left: 0, right: 0 }}
