@@ -104,8 +104,8 @@ export const OPTIONS: Option[] = [
       {
         id: 'license',
         name: 'Licencia de uso',
-        upfront: '$ 32.000.000',
-        monthly: '$ 2.000.000 / mes',
+        upfront: '$ 20.000.000',
+        monthly: '$ 1.300.000 / mes',
         monthlyNote: 'Incluye hosting, soporte y actualizaciones',
         recommended: true,
         bestFor: 'Sin preocuparse de hosting ni mantenimiento',
