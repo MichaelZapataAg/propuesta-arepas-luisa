@@ -18,8 +18,8 @@ function App() {
         <Features />
         <TechCapabilities />
         <Pricing />
-        <FAQ />
         <CTA />
+        <FAQ />
       </main>
       <Footer />
     </>
