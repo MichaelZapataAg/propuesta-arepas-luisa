@@ -19,8 +19,8 @@ function App() {
         <Features />
         <TechCapabilities />
         <Pricing />
-        <Terms />
         <CTA />
+        <Terms />
         <FAQ />
       </main>
       <Footer />
