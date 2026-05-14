@@ -18,7 +18,7 @@ export function Pricing() {
           <span className="italic text-(--color-flag-strong)">Sin sorpresas.</span>
         </>
       }
-      subtitle="Precios en pesos colombianos. Todo abierto a negociar — son rangos honestos pensando en realidades de Medellín, no listas cerradas."
+      subtitle="Cifras orientativas en pesos colombianos, pensadas para realidades de Medellín. Todo abierto a conversar y ajustar al alcance real."
     >
       {/* Toggle */}
       <div className="mb-10 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
@@ -167,8 +167,8 @@ export function Pricing() {
       </div>
 
       <p className="mt-10 text-center text-sm text-(--color-ink-subtle)">
-        ¿No encaja exactamente en ningún plan? Conversemos. Estos son rangos
-        sugeridos, no listas cerradas.
+        ¿No encaja exactamente en ningún plan? <span className="font-semibold text-(--color-flag-strong)">¡Negociemos!</span>{' '}
+        Las cifras son orientativas, el alcance real lo afinamos juntos.
       </p>
     </Section>
   );
