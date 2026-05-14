@@ -123,7 +123,7 @@ export function Pricing() {
               <div className="my-6 space-y-2 border-y border-(--color-border-soft) py-5">
                 <div>
                   <p className="font-mono text-[10px] uppercase tracking-widest text-(--color-ink-subtle)">
-                    Pago inicial
+                    {p.id === 'sale' ? 'Pago único' : 'Pago inicial'}
                   </p>
                   <p className="font-display text-2xl font-semibold text-(--color-ink)">
                     {p.upfront}
