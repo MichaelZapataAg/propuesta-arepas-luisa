@@ -18,12 +18,12 @@ const TERMS = [
   {
     icon: CalendarClock,
     title: 'Pago — Compra del código',
-    body: 'Anticipo del 50% para arrancar el desarrollo. El otro 50% se paga cuando se entrega la app, el repositorio y el material técnico.',
+    body: 'Anticipo del 30% para arrancar el desarrollo. El 70% restante se paga al entregar la app, el repositorio y el material técnico.',
   },
   {
     icon: CalendarClock,
     title: 'Pago — Licencia de uso',
-    body: 'Anticipo del 50% del inicial para arrancar. El otro 50% al entregar la app. La mensualidad empieza el mes siguiente al go-live, facturada el día 1.',
+    body: 'Anticipo del 30% del inicial para arrancar. El 70% restante al entregar la app. La mensualidad empieza el mes siguiente al go-live, facturada el día 1.',
   },
   {
     icon: Clock,
