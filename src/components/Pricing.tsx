@@ -87,7 +87,7 @@ export function Pricing() {
       </AnimatePresence>
 
       {/* Cards de planes */}
-      <div className="grid gap-5 lg:grid-cols-3">
+      <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
         <AnimatePresence mode="popLayout">
           {option.plans.map((p, i) => (
             <motion.article
@@ -113,7 +113,7 @@ export function Pricing() {
                 </span>
               )}
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-(--color-ink-subtle)">
-                Modelo {p.id === 'sale' ? 'A' : p.id === 'license' ? 'B' : 'C'}
+                Modelo {p.id === 'sale' ? 'A' : 'B'}
               </p>
               <h4 className="mt-1 font-display text-2xl font-semibold leading-tight">
                 {p.name}
