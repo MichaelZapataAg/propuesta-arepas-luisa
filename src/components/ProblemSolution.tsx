@@ -96,8 +96,9 @@ export function ProblemSolution() {
                 ease: 'easeOut',
               }}
               style={{ transformStyle: 'preserve-3d' }}
+              className="h-full"
             >
-              <TiltCard className="group relative overflow-hidden rounded-3xl border border-(--color-border-soft) bg-(--color-paper) p-6 shadow-sm transition-shadow hover:shadow-xl hover:shadow-(--color-flag)/5">
+              <TiltCard className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-(--color-border-soft) bg-(--color-paper) p-6 shadow-sm transition-shadow hover:shadow-xl hover:shadow-(--color-flag)/5">
                 <div
                   className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-(--color-clay-soft) text-(--color-clay)"
                   style={{ transform: 'translateZ(30px)' }}
