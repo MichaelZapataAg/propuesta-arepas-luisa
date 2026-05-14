@@ -26,7 +26,7 @@ export function Section({
     show: { opacity: 1, y: 0 },
   };
   return (
-    <section id={id} className={`relative py-20 md:py-28 lg:py-36 ${className}`}>
+    <section id={id} className={`relative py-16 md:py-20 lg:py-24 ${className}`}>
       <div className={contained ? 'mx-auto w-full max-w-7xl px-6 md:px-10' : ''}>
         {(eyebrow || title || subtitle) && (
           <motion.div
@@ -37,7 +37,7 @@ export function Section({
               hidden: {},
               show: { transition: { staggerChildren: 0.08 } },
             }}
-            className="mb-12 max-w-3xl md:mb-16"
+            className="mb-10 max-w-3xl md:mb-12"
           >
             {eyebrow && (
               <motion.p

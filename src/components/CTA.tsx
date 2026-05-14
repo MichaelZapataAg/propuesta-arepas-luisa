@@ -17,7 +17,7 @@ function WhatsAppIcon({ size = 18 }: { size?: number }) {
 
 export function CTA() {
   return (
-    <section id="cta" className="relative overflow-hidden py-24 md:py-32">
+    <section id="cta" className="relative overflow-hidden py-16 md:py-20 lg:py-24">
       <div
         className="absolute inset-0 -z-10"
         style={{
