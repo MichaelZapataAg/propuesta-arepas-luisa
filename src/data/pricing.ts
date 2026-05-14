@@ -40,7 +40,7 @@ export const OPTIONS: Option[] = [
       {
         id: 'sale',
         name: 'Compra del código',
-        upfront: '$ 28.000.000',
+        upfront: '¡Negociemos!',
         monthly: 'Sin mensualidad',
         bestFor: 'Empresas que quieren ser dueñas de la app',
         includes: [
@@ -105,7 +105,7 @@ export const OPTIONS: Option[] = [
       {
         id: 'sale',
         name: 'Compra del código',
-        upfront: '$ 85.000.000',
+        upfront: '¡Negociemos!',
         monthly: 'Hosting ~ $ 100.000 / mes',
         bestFor: 'Quieren independencia técnica total',
         includes: [
