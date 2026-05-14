@@ -8,7 +8,7 @@ import {
   animate,
   useInView,
 } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import { PhoneMockup } from './PhoneMockup';
 
@@ -57,11 +57,25 @@ function WhatsAppIcon({ size = 18 }: { size?: number }) {
   );
 }
 
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)');
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
+  return isDesktop;
+}
+
 export function Hero() {
   const reduce = useReducedMotion();
+  const isDesktop = useIsDesktop();
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 400], [0, reduce ? 0 : -60]);
-  const opacity = useTransform(scrollY, [0, 400], [1, 0.4]);
+  const enableParallax = isDesktop && !reduce;
+  const y = useTransform(scrollY, [0, 400], [0, enableParallax ? -60 : 0]);
+  const opacity = useTransform(scrollY, [0, 400], [1, enableParallax ? 0.4 : 1]);
 
   return (
     <section id="top" className="relative pt-28 pb-24 md:pt-36 md:pb-32 lg:pt-44">
