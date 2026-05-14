@@ -4,6 +4,7 @@ import { ProblemSolution } from './components/ProblemSolution';
 import { Features } from './components/Features';
 import { TechCapabilities } from './components/TechCapabilities';
 import { Pricing } from './components/Pricing';
+import { Terms } from './components/Terms';
 import { FAQ } from './components/FAQ';
 import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
@@ -18,6 +19,7 @@ function App() {
         <Features />
         <TechCapabilities />
         <Pricing />
+        <Terms />
         <CTA />
         <FAQ />
       </main>
