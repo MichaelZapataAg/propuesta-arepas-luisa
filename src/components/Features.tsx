@@ -5,15 +5,39 @@ import { Section } from './Section';
 import { PhoneMockup } from './PhoneMockup';
 import { FEATURES } from '../data/features';
 
+const slideVariants = {
+  enter: (dir: number) => ({
+    x: dir > 0 ? '70%' : '-70%',
+    opacity: 0,
+  }),
+  center: { x: 0, opacity: 1 },
+  exit: (dir: number) => ({
+    x: dir > 0 ? '-70%' : '70%',
+    opacity: 0,
+  }),
+};
+
 export function Features() {
-  const [active, setActive] = useState(0);
+  const [[active, direction], setState] = useState<[number, number]>([0, 1]);
   const reduce = useReducedMotion();
   const total = FEATURES.length;
 
-  const goNext = useCallback(() => setActive((a) => (a + 1) % total), [total]);
-  const goPrev = useCallback(
-    () => setActive((a) => (a - 1 + total) % total),
+  const navigate = useCallback(
+    (newIndex: number, dir: number) => {
+      const safeIndex = ((newIndex % total) + total) % total;
+      setState([safeIndex, dir]);
+    },
     [total],
+  );
+
+  const goNext = useCallback(() => navigate(active + 1, 1), [active, navigate]);
+  const goPrev = useCallback(() => navigate(active - 1, -1), [active, navigate]);
+  const goTo = useCallback(
+    (idx: number) => {
+      if (idx === active) return;
+      navigate(idx, idx > active ? 1 : -1);
+    },
+    [active, navigate],
   );
 
   // Teclado: ← →
@@ -63,13 +87,18 @@ export function Features() {
 
         {/* Card del slide actual */}
         <div className="relative overflow-hidden rounded-[36px] border border-(--color-border-soft) bg-(--color-paper)/60 px-5 py-10 backdrop-blur md:px-12 md:py-16 lg:px-20">
-          <AnimatePresence mode="wait" custom={active}>
+          <AnimatePresence mode="wait" custom={direction} initial={false}>
             <motion.div
               key={feat.id}
-              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 20 }}
-              animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
-              exit={reduce ? { opacity: 0 } : { opacity: 0, y: -20 }}
-              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              custom={direction}
+              variants={reduce ? undefined : slideVariants}
+              initial={reduce ? { opacity: 0 } : 'enter'}
+              animate={reduce ? { opacity: 1 } : 'center'}
+              exit={reduce ? { opacity: 0 } : 'exit'}
+              transition={{
+                x: { type: 'spring', stiffness: 260, damping: 32 },
+                opacity: { duration: 0.25 },
+              }}
               drag={reduce ? false : 'x'}
               dragConstraints={{ left: 0, right: 0 }}
               dragElastic={0.2}
@@ -158,7 +187,7 @@ export function Features() {
                 type="button"
                 aria-label={`Ir al flujo ${i + 1}: ${f.badge}`}
                 aria-current={i === active}
-                onClick={() => setActive(i)}
+                onClick={() => goTo(i)}
                 className="group relative grid h-9 place-items-center px-1"
               >
                 <span

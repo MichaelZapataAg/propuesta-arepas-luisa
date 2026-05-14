@@ -14,7 +14,7 @@ export function Pricing() {
       eyebrow="Planes y precios"
       title={
         <>
-          Dos caminos. Tres formas de pagar.{' '}
+          Dos caminos. Dos formas de pagar.{' '}
           <span className="italic text-(--color-flag-strong)">Sin sorpresas.</span>
         </>
       }
