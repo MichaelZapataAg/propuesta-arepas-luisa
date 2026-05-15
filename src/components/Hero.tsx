@@ -24,14 +24,14 @@ function StaggerWords({
   const reduce = useReducedMotion();
   const words = children.split(' ');
   return (
-    <span className={`inline ${className}`}>
+    <span className="inline">
       {words.map((word, i) => (
         <span
           key={i}
           className="inline-block overflow-hidden align-bottom pt-[0.05em] pb-[0.28em]"
         >
           <motion.span
-            className="inline-block"
+            className={`inline-block ${className}`}
             initial={reduce ? { opacity: 0 } : { y: '100%', opacity: 0 }}
             animate={reduce ? { opacity: 1 } : { y: 0, opacity: 1 }}
             transition={{
